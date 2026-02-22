@@ -1,0 +1,44 @@
+﻿@model WebAplicacionControldeGastos.Models.Categorias
+
+@{
+    ViewBag.Title = "Eliminar Categoría";
+}
+
+<div class="container" style="margin-top: 20px;">
+    <div class="border-bottom pb-3 mb-4">
+        <h2 class="mb-0" style="color: #dc3545; font-weight: 300;">Eliminar Categoría</h2>
+        <small class="text-muted">¿Estás totalmente seguro de que deseas borrar este registro?</small>
+    </div>
+
+    <div class="card shadow-sm border-0 border-start border-danger border-4" style="max-width: 600px;">
+        <div class="card-body p-4">
+
+            <p class="text-danger mb-4 fw-bold">
+                 Cuidado: Esta acción eliminará la categoría permanentemente de la base de datos.
+            </p>
+
+            <dl class="row mb-0">
+                <dt class="col-sm-4 text-secondary" style="font-weight: 600; font-size: 0.95rem;">
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+
+                <dd class="col-sm-8" style="font-size: 1.1rem; color: #333; font-weight: 500;">
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+            </dl>
+
+        </div>
+
+        <div class="card-footer bg-white border-top-0 p-4 pt-0">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="d-flex gap-3 mt-2">
+                    <input type="submit" value="Sí, Eliminar Definitivamente" class="btn btn-danger px-4" />
+                    @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-outline-secondary px-4" })
+                </div>
+            }
+        </div>
+    </div>
+</div>

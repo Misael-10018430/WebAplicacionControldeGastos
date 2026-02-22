@@ -1,0 +1,33 @@
+﻿@model WebAplicacionControldeGastos.Models.Categorias
+
+@{
+    ViewBag.Title = "Detalles de Categoría";
+}
+
+<div class="container" style="margin-top: 20px;">
+    <div class="border-bottom pb-3 mb-4">
+        <h2 class="mb-0" style="color: #1a1a1a; font-weight: 300;">Detalles de Categoría</h2>
+        <small class="text-muted">Información específica de esta clasificación</small>
+    </div>
+
+    <div class="card shadow-sm border-0" style="max-width: 600px;">
+        <div class="card-body p-4">
+
+            <dl class="row mb-0">
+                <dt class="col-sm-4 text-secondary" style="font-weight: 600; font-size: 0.95rem;">
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+
+                <dd class="col-sm-8" style="font-size: 1.1rem; color: #333;">
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+            </dl>
+
+        </div>
+
+        <div class="card-footer bg-white border-top-0 p-4 pt-0 d-flex gap-3">
+            @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-dark px-4" })
+            @Html.ActionLink("Volver a la lista", "Index", null, new { @class = "btn btn-outline-secondary px-4" })
+        </div>
+    </div>
+</div>
